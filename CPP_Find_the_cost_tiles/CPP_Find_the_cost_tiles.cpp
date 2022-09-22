@@ -7,7 +7,7 @@
 #include <iostream>
 #include <math.h>
 #include <cctype>
-
+#include <string>
 
 using namespace std;
 
@@ -35,6 +35,46 @@ string lower_s(const string& s_in) {
 	return lower_string;
 }
 
+// Gets a double value from the user while ensuring that the data is valid
+double get_data() {
+	string valid_characters = "0123456789."; // Declaring all of the valid characters that are acceptable input
+	string tester_string; // used for validating data
+	bool has_decimal; // used for ensuring there is only one decimal 
+	bool all_num;
+	while (true) {
+		cin >> tester_string;
+		all_num = true;
+		has_decimal = false;
+		// Looping over the string and testing to ensure that each charater is a part of the valid characters set
+		for (int i = 0; i < tester_string.size(); i++) {
+			if (valid_characters.find(tester_string[i]) == string::npos) {
+				cout << "Please enter only numbers or a period, no characters: ";
+				all_num = false;
+				break;
+			}
+
+			// Ensuring that the string only contains one decimal point
+			else if (tester_string[i] == '.') {
+				if (has_decimal) {
+					all_num = false;
+					cout << "Please only enter one decimal point: ";
+					break;
+				}
+				has_decimal = true;
+			}
+		}
+
+		// Returning the string made double assuming all requirements are met
+		if (all_num) {
+			return stod(tester_string);
+		}
+		else {
+			continue;
+		}
+		
+	}
+}
+
 int main() {
 	// Variable Declaration
 	double length;
@@ -53,13 +93,13 @@ int main() {
 
 	// Fetching all of the needed data
 	cout << "Please enter the cost per hour for the labor: ";
-	cin >> cost_per_hour;
+	cost_per_hour = get_data();
 
 	cout << "Please enter the average square feet per hour the labor can produce: ";
-	cin >> square_feet_per_hour;
+	square_feet_per_hour = get_data();
 
 	cout << "Please enter the cost per unit of flooring: ";
-	cin >> cost_per_unit;
+	cost_per_unit = get_data();
 
 	// Main loop to allow the user to make different calculations
 	while (true) {
@@ -72,10 +112,10 @@ int main() {
 		// Calculating triangular area
 		if (room_shape.compare("triangle") == 0) {
 			cout << "Please enter the width: ";
-			cin >> width;
+			width = get_data();
 
 			cout << "Please enter the height: ";
-			cin >> height;
+			height = get_data();
 
 			total_area = calculate_triangle(width, height);
 		}
@@ -83,17 +123,17 @@ int main() {
 		// Calculating rectangular area
 		else if (room_shape.compare("rectangle") == 0) {
 			cout << "Please enter the width: ";
-			cin >> width;
+			width = get_data();
 
 			cout << "Please enter the length: ";
-			cin >> length;
+			length = get_data();
 			total_area = calculate_rectangle(length, width);
 		}
 
 		// Calculating circular area
 		else if (room_shape.compare("circle") == 0) {
 			cout << "Please enter the radius: ";
-			cin >> radius;
+			radius = get_data();
 			total_area = calculate_circle(radius);
 		}
 
