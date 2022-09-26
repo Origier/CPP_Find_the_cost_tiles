@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.32510.428
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPP_Find_the_cost_tiles", "CPP_Find_the_cost_tiles\CPP_Find_the_cost_tiles.vcxproj", "{329FB542-5BD0-4836-BFA6-9A6D6E5A2379}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataInput", "..\DataInput\DataInput\DataInput.vcxproj", "{3E876937-DA9A-42A0-B980-03E161D8DB16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{329FB542-5BD0-4836-BFA6-9A6D6E5A2379}.Release|x64.Build.0 = Release|x64
 		{329FB542-5BD0-4836-BFA6-9A6D6E5A2379}.Release|x86.ActiveCfg = Release|Win32
 		{329FB542-5BD0-4836-BFA6-9A6D6E5A2379}.Release|x86.Build.0 = Release|Win32
+		{3E876937-DA9A-42A0-B980-03E161D8DB16}.Debug|x64.ActiveCfg = Debug|x64
+		{3E876937-DA9A-42A0-B980-03E161D8DB16}.Debug|x64.Build.0 = Debug|x64
+		{3E876937-DA9A-42A0-B980-03E161D8DB16}.Debug|x86.ActiveCfg = Debug|Win32
+		{3E876937-DA9A-42A0-B980-03E161D8DB16}.Debug|x86.Build.0 = Debug|Win32
+		{3E876937-DA9A-42A0-B980-03E161D8DB16}.Release|x64.ActiveCfg = Release|x64
+		{3E876937-DA9A-42A0-B980-03E161D8DB16}.Release|x64.Build.0 = Release|x64
+		{3E876937-DA9A-42A0-B980-03E161D8DB16}.Release|x86.ActiveCfg = Release|Win32
+		{3E876937-DA9A-42A0-B980-03E161D8DB16}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
